@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>ТАБЛИЦА</title>
+
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'js/clipboard.js' %}"></script>
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+
+        <div class="text-center">
+
+            <div class="form-floating mb-3 text-center">
+              <input type="text" class="form-control text-center" id="floatingInput" placeholder="__.__.____" data-mask="date" tyle="width: 100%;">
+              <label class="text-center" for="floatingInput">Введите дату рождения</label>
+            </div>
+
+        </div>
+        <div class="text-center gx-2 gy-4 ">
+        <!-- data-bs-toggle="modal" -->    <button type="button" id="rasschetButton" class="btn btn-dark"  data-bs-target="#staticBackdrop"  style="width: 100%;">
+              РАССЧИТАТЬ
+            </button>
+        </div>
+
+        <div class="  ">
+          <div class="row ">
+            <div class="col-sm-9 gx-2 gy-2 float-left">
+                <div class="p-1 border bg-light">
+                    <small class="text-muted">Дата рождения: </small>
+                    <small class="lead leader" id="data_r">нет</small>
+                    <br>
+
+                    <small class="text-muted">Дополнительные числа:</small>
+                    <small class="lead leader" id="dop_c">нет</small>
+                    <br>
+                    <small class="text-muted">Число судьбы: </small>
+                    <small id="sudba" class="lead leader">нет</small>
+                    <br>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2 text-center">
+                <div class="p-3 border bg-dark ">
+                    <small class="text-muted">
+                        Темперамент
+                    </small>
+                    <br>
+                    <p class="lead font-white" id="temper">нет</p>
+                </div>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">
+                        Характер
+                    </small>
+                    <br>
+                    <p class="lead leader" id="xarakter">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Здоровье</small>
+                    <br>
+                    <p class="lead leader" id="zdor">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Удача</small>
+                    <br>
+                    <p class="lead leader" id="udacha">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-dark">
+                    <small class="text-muted">Цель</small>
+                    <br>
+                    <p class="lead font-white" id="cel">нет</p>
+                </div>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Энергия</small>
+                    <br>
+                    <p class="lead leader" id="energy">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Логика</small>
+                    <br>
+                    <p class="lead leader" id="logik">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Долг</small>
+                    <br>
+                    <p class="lead leader" id="dolg">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-dark">
+                    <small class="text-muted">Семья</small>
+                    <br>
+                    <p class="lead font-white" id="semya">нет</p>
+                </div>
+            </div>
+        </div>
+          <div class="row text-center">
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Интерес</small>
+                    <br>
+                    <p class="lead leader" id="interes">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Труд</small>
+                    <br>
+                    <p class="lead leader" id="trud">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-light">
+                    <small class="text-muted">Память</small>
+                    <br>
+                    <p class="lead leader" id="pamyat">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-dark">
+                    <small class="text-muted">Привычки</small>
+                    <br>
+                    <p class="lead font-white" id="privuchki">нет</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row text-center">
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 "></div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 border bg-dark">
+                    <small class="text-muted">Быт</small>
+                    <br>
+                    <p class="lead font-white" id="but">нет</p>
+                </div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 "></div>
+            </div>
+            <div class="col-sm-3 gx-2 gy-2">
+                <div class="p-3 "></div>
+            </div>
+        </div>
+
+        </div>
+        <br>
+
+
+        <div class="row text-center gx-2 gy-4">
+            <div class="clipboard-example align-items-center ">
+                <div class="input-group bg-light mb-3">
+                    <input id="in01" type="text" class="form-control"
+                       placeholder="Результат..." aria-label=""
+                       aria-describedby="btn01" value="" readonly >
+                    <button id="btn01"  class="btn btn-dark" type="button"
+                        data-clipboard-demo=""  data-clipboard-target="#in01"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Скопировать">
+                            Скопировать
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        {% include 'main/carousel.html' %}
+
+
+        <div class="footer  ">
+            <div class="row text-center ">
+                <div class="social instagram col-sm-4 ">
+                    <a href="https://instagram.com/renacrazy?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa fa-instagram fa-3x"></i></a>
+                </div>
+                <div class="social telegram col-sm-4 ">
+                    <a href="https://t.me/renacrazy" target="_blank"><i class="fa fa-paper-plane fa-3x"></i></a>
+                </div>
+                <div class="social whatsapp col-sm-4 ">
+                    <a href="https://wa.me/79281121913" target="_blank"><i class="fa fa-whatsapp fa-3x"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/imask.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/func.js' %}"></script>
+
+</body>
+</html>
