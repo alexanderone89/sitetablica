@@ -143,3 +143,6 @@ THUMBNAIL_ALIASES = {
         'my_preview_3': {'size': (75, 0), 'crop': 'smart'},
     },
 }
+
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
