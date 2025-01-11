@@ -14,3 +14,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 # копируем содержимое текущей папки в контейнер
 COPY . .
+
+CMD ["python", "manage.py", "migrate"]
+CMD ["python", "manage.py", "runserver"]
