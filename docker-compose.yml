@@ -4,6 +4,7 @@ services:
   sitetablica:
     # Берем Dockerfile из каталога app
     build: .
+    command: python manage.py migrations
     # Запускаем тестовый сервер
     command: python manage.py runserver 0.0.0.0:8000
     # куда будут помещены данные из каталога app
