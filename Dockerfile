@@ -5,8 +5,8 @@ FROM python:3.10.11
 WORKDIR /app/
 
 # переменные окружения для python
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE="1"
+ENV PYTHONUNBUFFERED="1"
 
 # устанавливаем зависимости
 RUN pip install --upgrade pip
