@@ -37,7 +37,7 @@ class Settings(models.Model):
 class Servise(models.Model):
     title = CharField(max_length=100, verbose_name='Название', blank=True)
     description = models.TextField(blank=True, verbose_name='Описание')
-    price = models.DecimalField(max_digits=7, decimal_places=2, blank=True, verbose_name='Стоимость')
+    price = models.DecimalField(max_digits=7, decimal_places=2, default=0, blank=True, verbose_name='Стоимость')
     enabled = models.BooleanField(default=True, verbose_name='Показывать на странице')
 
     def __str__(self):
