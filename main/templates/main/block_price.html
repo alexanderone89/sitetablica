@@ -24,8 +24,8 @@
 {#{% endfor %}#}
 
 {% for servise in servises %}
-     <div class="card text-center border-3 border-black font-card-color align-content-center justify-content-center" style="width: 33%">
-      <div class="card-header">
+     <div class="card text-center border-dark font-card-color align-content-center justify-content-center" style="width: 33%">
+      <div class="card-header" style="min-height: 10px">
 {#        {{ servise.title }}#}
       </div>
       <div class="card-body">
@@ -33,7 +33,7 @@
         <p class="card-text">{{ servise.description }}</p>
 {#        <a href="#" class="btn btn-primary">Go somewhere</a>#}
       </div>
-      <div class="card-footer  font-white">
+      <div class="card-footer">
           {% if servise.price %}
                 {{ servise.price }} р.
           {% endif %}

@@ -1,0 +1,32 @@
+<ul class="social-icons">
+{% if socials %}
+    {% for social in socials %}
+        <li>
+{##}
+{#                <a class="social-icon"#}
+{#                   href="{{ social.url_account }}"#}
+{#                   title=""#}
+{#                   target="_blank"#}
+{#                   rel="noopener">#}
+{#                <div class="social-logo"#}
+{#                 style='background-image: url("{{ social.logo.url }}");#}
+{#                        max-width: 100%;height: auto;'>#}
+{#                    </div>#}
+{#                </a>#}
+
+
+                <a  href="{{ social.url_account }}">
+                    <div class="social-icon">
+                    <img src="{{ social.logo.url }}" class="img-fit" alt="">
+                    </div>
+                </a>
+
+        </li>
+    {% endfor %}
+{% endif %}
+</ul>
+
+    {#  <li><a class="social-icon-fb" href="#" title="..." target="_blank" rel="noopener"></a></li>#}
+{#  <li><a class="social-icon-vk" href="#" title="..." target="_blank" rel="noopener"></a></li>#}
+{#  <li><a class="social-icon-telegram" href="#" title="..." target="_blank" rel="noopener"></a></li>#}
+{#  <li><a class="social-icon-youtube" href="#" title="..." target="_blank" rel="noopener"></a></li>#}

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 from django.db import models
-from django.db.models import CharField
+from django.db.models import CharField, BooleanField
 
 
 class Post(models.Model):
@@ -46,6 +46,20 @@ class Servise(models.Model):
     class Meta:
         verbose_name = 'Услуга'
         verbose_name_plural = ('Услуги')
+
+
+class Socials(models.Model):
+    title = CharField(max_length=100, verbose_name='Название', blank=True)
+    logo = models.ImageField(upload_to='social_logos/', verbose_name='Логотип', blank=True)
+    url_account = CharField(max_length=100, verbose_name='Ссылка на аккаунт', blank=True)
+    enabled = BooleanField(default=True, verbose_name='Показывать на странице')
+
+    def __str__(self):
+        return self.url_account
+
+    class Meta:
+        verbose_name = 'Соцсеть'
+        verbose_name_plural = ('Соцсети')
 
 # @receiver(pre_save, sender=Settings)
 # def pr_save(sender, instance, **kwargs):
