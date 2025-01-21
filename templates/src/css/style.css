@@ -1,18 +1,47 @@
-
-body {
-  font-family: 'Roboto', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+:root {
+    --primary-color-buttons: linear-gradient(#aefd34, #037703);
+    --primary-color-buttons-down: linear-gradient(#25a50e, #014301);
+    --primary-color-buttons-focus: linear-gradient(#014301, #25a50e);
 }
 
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
 
 .footer{
     max-width: 60%;
     margin: 0 auto;
+    bottom: 0;
+    position: sticky;
 }
 
-.container{
+.container {
     max-width: 60%;
     margin: 0 auto;
+    padding: 20px;
+    /*background-color: #f0f0f0;*/
+    /*backdrop-filter: blur(5px);*/
 }
+
+/*.column {*/
+/*    width: 50%;*/
+/*    float: left;*/
+/*    margin-right: 5%;*/
+/*    background-color: #3498db;*/
+/*    color: #ffffff;*/
+/*    text-align: center;*/
+/*    !*padding: 20px;*!*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*!* Clear the float to prevent container collapse *!*/
+/*.container::after {*/
+/*    content: "";*/
+/*    display: table;*/
+/*    clear: both;*/
+/*}*/
+
 
 .leaderr {
     color: rgb(255, 0, 0);
@@ -97,21 +126,146 @@ a:active {
 }
 
 .bg-col4-cells {
-    background-color: #157004;
+    opacity: 0.96;
+    /*background-color: #2b7a78;*/
+    background-color: #61892f;
 }
 
 .bg-cols-tab {
     /*background-color: #828485;*/
-    opacity: 0.8;
-    background: linear-gradient(#85898c, #6c7278);
+    opacity: 0.96;
+    /*background: linear-gradient(#85898c, #6c7278);*/
+    /*background-color: #def2f1;*/
+    background-color: #86c232;
 }
 
 .card {
-    opacity: 0.8;
-    background: linear-gradient(greenyellow, #014301);
-
+    opacity: 0.96;
+    background: var(--primary-color-buttons);
+    /*background-color: #def2f1;*/
 }
 
 .font-card-color{
     color: #2b2f32;
 }
+
+.image-blurred-edge- {
+  /*box-shadow: 0 0 8px 8px green inset;*/
+ --r: 15% 75px 35vh 13vw/ 3em 5rem 29vmin 12.5vmax;
+  border-radius: var(--r);
+  /* same styles as before */
+
+  &:before {
+    /* same styles as before */
+    border-radius: inherit;
+    clip-path: inset(0 round var(--r));
+  }
+}
+
+.buttons.div90{
+    width: 100%;
+}
+
+.buttons{
+    background: var(--primary-color-buttons);
+}
+
+.buttons:focus{
+    outline: none;
+    /**/
+}
+.buttons:hover{
+    background: var(--primary-color-buttons-focus);/* var(--primary-color-buttons); */
+}
+
+.buttons:focus:active{
+    background: var(--primary-color-buttons-down);
+}
+.carousel-inner {
+height: 100%;
+}
+
+@media all and (orientation:landscape) {
+ /* стили для пейзажа */
+    .container {
+        max-width: 55%;
+        /*font-size: 25px;*/
+    }
+    .class-price{
+        font-size: 15px;
+    }
+    .social-icon{
+          position: relative;
+        margin-left: 0;
+        margin-right: 0;
+        background-size: cover;
+
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 80px;
+    }
+
+    .footer{
+        height: 80px;
+    }
+
+}
+@media all and (orientation:portrait) {
+ /* стили для портрета */
+    .container{
+        max-width: 100%;
+        font-size: 20px;
+    }
+    .social-icon{
+          position: relative;
+        margin-left: 0;
+        margin-right: 0;
+        background-size: cover;
+
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 130px;
+    }
+
+    .footer{
+        height: 150px;
+    }
+}
+
+
+
+.avatar-container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 40px 20px #a6eda6; /* change to alter the effect*/
+
+}
+
+.social-logo{
+    width: 256px;
+    height: 256px;
+}
+
+.img-fit {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    border-radius: 50%;
+}
+

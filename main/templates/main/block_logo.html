@@ -1,8 +1,10 @@
 <br>
 {% if setting.logo %}
-    <div class="row text-center gx-2 gy-4">
+    <div class="row text-center gx-2 gy-4 image-blurred-edge">
         <div class="border-dark border-5 d-flex align-content-center justify-content-center">
-            <img class="bg-info rounded-circle" src="{{ setting.logo.url }}" style="width: 30%; "/>
+            <div class="avatar-container" style='background-image: url("{{ setting.logo.url }}")'>
+{#                <img class="bg-info rounded-circle " src="{{ setting.logo.url }}" style="width: 30%; "/>#}
+            </div>
         </div>
     </div>
 {% endif %}

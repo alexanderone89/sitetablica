@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy
 
-from .models import Post, Settings, Servise
+from .models import Post, Settings, Servise, Socials
 
 
 class MyAdminSite(admin.AdminSite):
@@ -39,15 +39,25 @@ class SettingsAdmin(admin.ModelAdmin):
     def preview_background(self, obj):
         return mark_safe(f'<img src="{obj.background.url}" style="max-width: 200px">')
 
+
 class ServiseAdmin(admin.ModelAdmin):
     list_display = ("title","description","price","enabled")
 
+class SocialsAdmin(admin.ModelAdmin):
+    readonly_fields = ["preview_logo"]
+    list_display = ("preview_logo2", "title","url_account", "enabled")
 
+    def preview_logo(self, obj):
+        return mark_safe(f'<img src="{obj.logo.url}" style="max-width: 200px">')
+
+    def preview_logo2(self, obj):
+        return mark_safe(f'<img src="{obj.logo.url}" style="max-width: 20px">')
 
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Settings, SettingsAdmin)
 admin.site.register(Servise, ServiseAdmin)
+admin.site.register(Socials, SocialsAdmin)
 
 admin.site.site_header = gettext_lazy('Админ панель')
 admin.site.site_title = gettext_lazy('Админ панель')
