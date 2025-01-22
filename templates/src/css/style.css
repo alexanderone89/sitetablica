@@ -125,11 +125,12 @@ a:active {
 .card {
     /*opacity: 0.96;*/
     background: var(--color-card);
+    font-weight: bold;
     /*background-color: #def2f1;*/
 }
 
 .font-card-color{
-    color: #2b2f32;
+    color: #121212;
 }
 
 .image-blurred-edge- {
