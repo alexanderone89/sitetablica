@@ -1,31 +1,64 @@
+    const element = document.querySelector(`[data-mask="date"]`) // ищем поля ввода по селектору с переданным значением data-атрибута
+    const globalMask = IMask(element, {
+        mask: Date,
+        pattern: 'd.m.Y',
+        blocks: {
+            d: {
+                mask: IMask.MaskedRange,
+                from: 1,
+                to: 31,
+                maxLength: 2,
+            },
+            m: {
+                mask: IMask.MaskedRange,
+                from: 1,
+                to: 12,
+                maxLength: 2,
+            },
+            Y: {
+                mask: IMask.MaskedRange,
+                from: 1900,
+                to: 2200,
+                maxLength:4,
+            },
+        }
+        });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const mask = (dataValue, options) => { // создаем универсальную функцию
-        const elements = document.querySelectorAll(`[data-mask="${dataValue}"]`) // ищем поля ввода по селектору с переданным значением data-атрибута
-        if (!elements) return // если таких полей ввода нет, прерываем функцию
+    let globalArrayForP = document.querySelectorAll('p');
+    let globalArrayForSmall = document.querySelectorAll('small');
+    let arr = [];
 
-        elements.forEach(el => { // для каждого из полей ввода
-            IMask(el, options) // инициализируем плагин imask для необходимых полей ввода с переданными параметрами маски
-        })
-  }
 
-  // Маска для даты
-  mask('date', {
-    mask: Date,
-    min: new Date(1000, 0, 1), // минимальная дата 01.01.1900
-  });
-});
+    for (let i = 0, length = globalArrayForP.length; i < length; i++) {
+        if (globalArrayForP[i].innerText === 'нет'){
+            arr.push(globalArrayForP[i]);
+        }
+    }
 
-var rasschetButton = document.querySelector("#rasschetButton");
+    for (let i = 0, length = globalArrayForSmall.length; i < length; i++) {
+        if (globalArrayForSmall[i].innerText === 'нет'){
+            arr.push(globalArrayForSmall[i]);
+        }
+    }
 
-rasschetButton.addEventListener("click", function() {
+    const select = document.querySelector('#selectYear');
+    let rasschetButton = document.querySelector("#rasschetButton");
+    rasschetButton.addEventListener("click", function() {
+
+
+        for (let i = 0, length = arr.length; i < length; i++) {
+                arr[i].innerText = 'нет';
+        }
+
+        pp = document.getElementById('in01')
+        pp.value = ""
+
         let textdate = document.getElementById("floatingInput").value;
-        console.log(textdate)
+        if (textdate === ""){
+            return;
+        }
 
         masdate = textdate.toString().split('.');
-
-        console.log(masdate);
-
         let year = masdate[2];
         let month = masdate[1];
         if(month < 10){
@@ -65,8 +98,6 @@ rasschetButton.addEventListener("click", function() {
         cel    = povtor1 + povtor4 + povtor7;
         semya  = povtor2 + povtor5 + povtor8;
         privuchki = povtor3 + povtor6 + povtor9;
-
-
 
         if (temper > 0) document.getElementById('temper').innerText = temper;
         else document.getElementById('temper').innerText = 'нет';
@@ -130,21 +161,18 @@ rasschetButton.addEventListener("click", function() {
         if (povtor9 > 0 )
             document.getElementById('pamyat').innerText = '9'.repeat(povtor9);
         else document.getElementById('pamyat').innerText = 'нет';
-});
 
+        textd = document.getElementById("floatingInput");
+        textd.value = "";
+        globalMask.value = "";
+    });
 
-function leapYear(year)
-{
-  return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
-}
-
-
-// var startDate = document.getElementById('startDate');
-let btn = document.getElementById('btn01');
-let clipboard = new ClipboardJS(btn);
-clipboard.on('success', function(e) {
-    console.log(e);
-});
-clipboard.on('error', function(e) {
-    console.log(e);
-});
+        // var startDate = document.getElementById('startDate');
+        let btn = document.getElementById('btn01');
+        let clipboard = new ClipboardJS(btn);
+        clipboard.on('success', function(e) {
+            console.log(e);
+        });
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });

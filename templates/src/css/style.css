@@ -230,21 +230,40 @@ height: 100%;
     background-size: cover;
     width: 250px;
     height: 400px;
-    border-radius: 50%;
-    clip-path: ellipse(50% 50% at 50% 50%);
+    border-radius: 50px;
     /*overflow: hidden;*/
     /*box-shadow: inset 0px 0px 40px 20px #a6eda6; !* change to alter the effect*!*/
+
+
+
+
+    clip-path: ellipse(50% 50% at 50% 50%);
+
+  /*  position: relative;*/
+  /*  margin-left: auto;*/
+  /*  margin-right: auto;*/
+  /*  background-position: top center;*/
+  /*!*margin: 0px 0 10 02px;*!*/
+  /*-moz-border-radius: 100px / 50px;*/
+  /*-webkit-border-radius: 100px / 70px;*/
+  /*border-radius: 50px;*/
+  /*clip-path: ellipse(50% 50% at 50% 50%);*/
+  /*width: 250px;*/
+  /*height: 400px;*/
+
 }
 
-/* .avatar-container{*/
+
+/*.avatar-container{*/
+/*    border-radius: 25%;*/
 /*    -webkit-box-shadow: 0 0 20px rgba(255,255,255,.6), inset 0 0 20px rgba(255,255,255,1);*/
 /*    -moz-box-shadow: 0 0 20px rgba(255,255,255,.6), inset 0 0 20px rgba(255,255,255,1);*/
 /*    box-shadow: 0 0 20px rgba(255,255,255,.6), inset 0 0 20px green ;*/
-    /*-webkit-border-radius: 60em;*/
-    /*-moz-border-radius: 60em;*/
-    /*border-radius: 60em;*/
+/*    !*-webkit-border-radius: 60em;*!*/
+/*    !*-moz-border-radius: 60em;*!*/
+/*    !*border-radius: 60em;*!*/
 /*}*/
- 
+
 
 .social-logo{
     width: 256px;
