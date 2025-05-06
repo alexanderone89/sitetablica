@@ -9,7 +9,7 @@ services:
     ports:
       - "80:8080"
     volumes:
-      - ./app/staticfiles
+#      - ./app/staticfiles
       - ./docker/nginx:/etc/nginx/conf.d
   sitetablica:
     # Берем Dockerfile из каталога app
